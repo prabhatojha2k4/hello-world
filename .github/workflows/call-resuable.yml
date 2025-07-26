@@ -1,0 +1,13 @@
+# .github/workflows/call-reusable.yml
+name: Call Reusable Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-workflow:
+    uses: prabhatojha2k4/reusableworkflow/.github/workflows/reusable-workflow.yml@main
+    with:
+      environment: production
+    secrets:
+      MY_SECRET: ${{ secrets.MY_SECRET }}
